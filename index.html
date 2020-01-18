@@ -1,0 +1,147 @@
+<html>
+<head>
+  <title>EcoTracker</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script async src="./index.js"></script>
+</head>
+<body>
+  <div class="section">
+    <h1>
+    <!--<marquee direction="up">-->
+       <img src="img/leafy.PNG" width="32" height="32">
+       <u>EcoTracker!</u>
+       <img src="img/leafy.PNG" width="32" height="32">
+       <!--</marquee>-->
+    </h1>
+    
+    <h3> Today's date: <var id="date"></h3>
+
+    <p id="text"></p>
+    <p id="text2"></p>
+    <p id="peopleImages"></p>
+
+    <!--Question 1-->
+    How many miles did you drive this week? <br>
+    <input type="text" id="IDNUMMILES" name="Miles traveled:" required
+    minlength="0" maxlength="10" size="20"/>
+    <br> <br>
+
+    <!--Question 2-->
+    What is your car's <b>average</b> mile's per gallon of fuel/gasoline? <br>
+    <input type="text" id="IDNUMMPG" name="Miles per gallon" required
+    minlength="0" maxlength="10" size="20"/>
+
+    <br><br>
+    <!--Question 3-->
+    Do you have an electric car? <br>
+    <input type="radio" id="electric" name="electric" value="yes"> Yes
+    <input type="radio" id="electric" name="electric" value="no" checked> No
+    <br><br>
+
+    <!--Question 4-->
+    What kind of diet do you follow? <br>
+    <select id="dietQ">
+      <option value="vegan">Vegan</option>
+      <option value="veg">Vegetarian</option>
+      <option value="average">Average</option>
+      <option value="meat">Meat Lover</option>
+    </select>
+    <br><br>
+
+    <!--Question 5-->
+    How many of the following types of public transport do you use? <br>
+    <input type="checkbox" id="transport1" value="lightrail" onchange="addOption(this)"> Light Rail<br>
+    <input type="checkbox" id="transport2" value="heavyrail" onchange="addOption(this)"> Heavy Rail<br>
+    <input type="checkbox" id="transport3" value="commuterrail" onchange="addOption(this)"> Commuter Rail<br>
+    <input type="checkbox" id="transport4" value="bus" onchange="addOption(this)"> Bus Transit <br>
+    <input type="checkbox" id="transport5" value="vanpool" onchange="addOption(this)"> Van Pool <br>
+
+    <p id="lightrailtext" style="display: none">Light Rail (yearly miles estimate):
+      <input id="lightrailinput" type="text" style="display: none"></input>
+    </p>
+
+    <p id="heavyrailtext" style="display: none">Heavy Rail (yearly miles estimate):
+      <input id="heavyrailinput" type="text" style="display: none"></input>
+    </p>
+
+    <p id="commuterrailtext" style="display: none">Commuter Rail (yearly miles estimate):
+      <input id="commuterrailinput" type="text" style="display: none"></input>
+    </p>
+
+    <p id="bustext" style="display: none">Bus Transit (yearly miles estimate):
+      <input id="businput" type="text" style="display: none"></input>
+    </p>
+
+    <p id="vanpooltext" style="display: none">Van Pool (yearly miles estimate):
+      <input id="vanpoolinput" type="text" style="display: none"></input>
+    </p> <br>
+
+    <!--Question 6-->
+    How much do you roughly spend shopping (online and in-store) monthly? <br>
+    <strong>$</strong><input type="text" id="goods">
+
+    <br><br><input type="button" value="Submit" id="buttonID" onclick="buttonFunction()"/> <br><br>
+</div>
+
+<div class="section">
+  <div class="row">
+    <div class="column">
+      <h1>Some statistics:</h1>
+      > The global average atmospheric carbon dioxide concentration has risen to about 407 ppm in 2018 (primarily due to increased fossil fuel usage), which is the highest it's ever been at any point in the last 800,000 years. <br> <br>
+      > A 2008 study found that for every degree Celsius the temperature rises due to CO2 levels, ozone pollution is expected to kill an additional 22,000 people through respiratory illness, asthma, and emphysema. <br> <br>
+      > The average passenger car produces almost one pound of carbon dioxide per mile travelled. <br> <br>
+      > For a typical American houshold with two cars, car transportation solely accounts for 47% of their carbon footprint. <br> <br>
+      > An average American household spends $1,075 on various goods per month, which equates to an average of 12 tons of carbon dioxide a year. <br> <br> 
+      > The production of beef requires roughly 20 times as much land, and emits 20 times as many emissions compared to beans, per gram of protein. It even requires 10 times as much when compared to chicken through this same metirc.
+
+      <h1>How the calculator works:</h1>
+      This calculator is rudimentary estimate of your carbon footprint based on transport and diet, for people in the USA. References for my data are located below.<br> <br>
+      <h3> PSA: This assumes electric cars emit ZERO pounds of CO2 a year, however this varies depending on the car, model, location, and also doesn't take into account the carbon used in the production of the cars.
+      </h3>
+    </div>
+    <div class="column">
+      <br>
+      <img src="https://www.climate.gov/sites/default/files/paleo_CO2_2018_620.gif" alt="Graph showing the carbon ppm increase to 407 in 2018" width="620*0.8" height="266*0.8" align="center" border="3">
+      <br> <br>
+
+      <img src="https://i1.wp.com/shrinkthatfootprint.com/wp-content/uploads/2013/01/foodprint5.gif?resize=540%2C410" alt="Bar graph showing rough estimates of carbon output for certain basic diets" width="540" height="410" align="center" border="3">
+      <br> <br>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h5>
+    Links: <br> <br>
+    <a href="https://github.com/dhavaljjani"> 
+      <img src="img/github.SVG" width="32" height="32"></a>
+
+      <a href="https://www.linkedin.com/in/dhaval-jani-ab8a54195/"> 
+        <img src="img/linkedin.PNG" width="32" height="32"></a>
+
+        <a href="mailto:djani2@ucmerced.edu">
+          <img src="img/email.PNG" width="32" height="32"></a>
+
+          <br><br>Made by Dhaval Jani for fun to learn some html, js, and css<br>
+          Contact me at djani2@ucmerced.edu! <br><br>
+          References: <br>
+          > <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-rating">https://www.epa.gov/greenvehicles/greenhouse-gas-rating</a><br>
+          > <a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a> <br>
+          > <a href="https://www.businessinsider.com/carbon-dioxide-record-human-health-effects-2018-5">https://www.businessinsider.com/carbon-dioxide-record-human-health-effects-2018-5</a> <br>
+          > <a href="https://data.worldbank.org/indicator/EN.ATM.CO2E.PC">hhttps://data.worldbank.org/indicator/EN.ATM.CO2E.PC</a> <br>
+          > <a href="https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/PublicTransportationsRoleInRespondingToClimateChange2010.pdf">https://www.transit.dot.gov/sites/fta.dot.gov/files/docs/PublicTransportationsRoleInRespondingToClimateChange2010.pdf</a><br>
+          > <a href="http://shrinkthatfootprint.com/food-carbon-footprint-diet">http://shrinkthatfootprint.com/food-carbon-footprint-diet</a> <br>
+          > <a href="https://www.nature.org/en-us/get-involved/how-to-help/carbon-footprint-calculator/">https://www.nature.org/en-us/get-involved/how-to-help/carbon-footprint-calculator/</a> <br>
+          > <a href="https://www.nationalgeographic.com/environment/2019/06/choosing-chicken-over-beef-cuts-carbon-footprint-surprising-amount">https://www.nationalgeographic.com/environment/2019/06/choosing-chicken-over-beef-cuts-carbon-footprint-surprising-amount</a> <br>
+
+
+          Images: <br>
+          > <a href="https://i1.wp.com/shrinkthatfootprint.com/wp-content/uploads/2013/01/foodprint5.gif?resize=540%2C410">https://i1.wp.com/shrinkthatfootprint.com/wp-content/uploads/2013/01/foodprint5.gif?resize=540%2C410</a> <br> 
+          > <a href="https://www.climate.gov/sites/default/files/paleo_CO2_2018_620.gif">https://www.climate.gov/sites/default/files/paleo_CO2_2018_620.gif</a> <br>
+
+          Inspired by: <br>
+          <a href="https://www.footprintcalculator.org/">https://www.footprintcalculator.org/</a> <br>
+  </h5> 
+</div>
+</body>
+</html>

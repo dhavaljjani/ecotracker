@@ -1,0 +1,41 @@
+.section {
+  text-align: center;
+  background-color: #23e33a;
+  /*lime green!^^*/
+  /*border-radius: 25%;*/
+  border-radius: 25px;
+  border: 5px solid black;
+  margin: 20px;
+}
+
+img{
+   padding: 3px;
+}
+
+html {
+  background-color: #006400;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#buttonID {
+  background-color: #009900; 
+  border: 2px solid black;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-family: "Courier New";
+  font-size: 20px;
+  font-weight:bold;
+  border-radius: 3px;
+}
